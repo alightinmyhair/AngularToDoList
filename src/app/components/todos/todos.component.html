@@ -1,8 +1,2 @@
-<h1>Todos</h1>
-<p *ngFor="let todo of todos">
-    <li>{{todo.id}}</li>
-    <li>{{todo.title}}</li>
-    <li>{{todo.completed}}</li>
-</p>
-<!-- <p>{{todos[0].title}}</p>
-<p>{{todos[0].completed}}</p> -->
+<app-todo-item *ngFor="let todo of todos" [todo]=todo>
+</app-todo-item>
