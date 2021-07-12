@@ -8,6 +8,7 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
+  
   todos!:Todo[];
  
   constructor( private todoService:TodoService) {}
@@ -23,6 +24,12 @@ export class TodosComponent implements OnInit {
     this.todos = this.todos.filter(t => t.id !== todo.id);
     //Remove from
     this.todoService.deleteTodo(todo).subscribe();
+  }
+
+  addTodo(todo:Todo) {
+    this.todoService.addTodo(todo).subscribe(todo => {
+      this.todos.push(todo);
+    });
   }
 
 }
