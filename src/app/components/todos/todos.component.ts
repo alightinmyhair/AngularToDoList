@@ -11,6 +11,7 @@ export class TodosComponent implements OnInit {
   
   todos!:Todo[];
  
+  //binding service
   constructor( private todoService:TodoService) {}
 
   ngOnInit(): void {

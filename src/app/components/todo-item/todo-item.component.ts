@@ -8,6 +8,7 @@ import { TodoService } from 'src/app/services/todo.service';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
+
 export class TodoItemComponent implements OnInit {
 
   @Input() todo!:Todo;
@@ -18,8 +19,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // Set Dynamic Classes
-
+// Set Dynamic Classes
 setClasses() {
   let classes = {
     todo: true,
@@ -30,8 +30,6 @@ setClasses() {
 
 onToggle(todo) {
   //Toggle in UI
-  console.log(todo);
-
   todo.completed = !todo.completed;
 
   //Toggle on server

@@ -18,9 +18,8 @@ export class TodoService {
   todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
   todosLimit = '?_limit=5';
 
-  constructor( private http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
-  //Get Todos
   getTodos(): Observable<Todo[]>{
    
     return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
@@ -38,6 +37,7 @@ export class TodoService {
   addTodo(todo:Todo):Observable<Todo> {
     return this.http.post<Todo>(this.todosUrl, todo, httpOptions);
   }
+
   //Toggle completed
   toggleCompleted(todo: Todo):Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
